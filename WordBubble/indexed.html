@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+}
+
+.node circle {
+  fill: #ccc;
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+
+text {
+  font: 24px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.year.label {
+  font: 500 196px "Helvetica Neue";
+  fill: #ddd;
+}
+
+</style>
+<h1>Most searched for words by theme</h1>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var width = 2860,
+    height = 1260;
+
+var color = d3.scale.category10();
+
+var force = d3.layout.force()
+    .charge(-1200)
+    .linkDistance(1000)
+    .size([width, height]);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+	/////////////////////////////////////////////////////////////////
+d3.json("data3.json", function(error, graph) {
+  force
+      .nodes(graph.nodes)
+      .start();
+
+ 
+
+  // You define here your nodes and the color will be d.group
+  var node = svg.selectAll(".node")
+      .data(graph.nodes)
+    .enter().append("g")
+      .attr("class", "node")
+      .call(force.drag);
+	  
+	node.append("circle") 
+	.style("fill", function(d) { return color(d.group); })
+	 .style("stroke", "black" )
+	  .transition().duration(5000)
+			.attr("r", function(d) { return d.Jan01; })
+			
+	  .transition().duration(5000)
+			.attr("r", function(d) { return d.Jan02; })
+	  .transition().duration(5000)
+			.attr("r", function(d) { return d.Jan03; })
+	  .transition().duration(5000)
+			.attr("r", function(d) { return d.Jan04; })
+	  .transition().duration(5000)
+			.attr("r", function(d) { return d.Jan05; })
+	  .transition().duration(5000)
+			.attr("r", function(d) { return d.Jan06; })
+	  .transition().duration(5000)
+			.attr("r", function(d) { return d.Jan07; })
+	  .transition().duration(5000)
+			.attr("r", function(d) { return d.Jan08; })
+	  .transition().duration(5000)
+			.attr("r", function(d) { return d.Jan09; })
+	  .transition().duration(5000)
+			.attr("r", function(d) { return d.Jan10; })
+	  .transition().duration(5000)
+			.attr("r", function(d) { return d.Jan11; })
+	  .transition().duration(5000)
+			.attr("r", function(d) { return d.Jan12; })
+	  .transition().duration(5000)
+			.attr("r", function(d) { return d.Jan13; })		
+	  .transition().duration(5000)
+			.attr("r", function(d) { return d.Jan14; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan15; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan16; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan17; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan18; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan19; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan20; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan21; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan22; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan23; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan24; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan25; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan26; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan27; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan28; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan29; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan30; })
+	.transition().duration(5000)
+			.attr("r", function(d) { return d.Jan31; })
+			;
+		
+  //Display node name 
+node.append("text")
+	  .text(function(d) { return d.name ; })
+	  .transition().duration(5000)
+      .style("font-size", function(d) { return Math.min(2 * d.Jan01, (2 * d.Jan01 - 8) / this.getComputedTextLength() * 24) + "px"; })
+	 
+	 .transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan02, (2 * d.Jan02 - 8) / this.getComputedTextLength() * 24) + "px"; })
+       .transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan03, (2 * d.Jan03 - 8) / this.getComputedTextLength() * 24) + "px"; })
+	   .transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan04, (2 * d.Jan04 - 8) / this.getComputedTextLength() * 24) + "px"; })
+	   .transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan05, (2 * d.Jan05 - 8) / this.getComputedTextLength() * 24) + "px"; })
+	   .transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan06, (2 * d.Jan06 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan07, (2 * d.Jan07 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan08, (2 * d.Jan08 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan09, (2 * d.Jan09 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan10, (2 * d.Jan10 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan11, (2 * d.Jan11 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan12, (2 * d.Jan12 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan13, (2 * d.Jan13 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan14, (2 * d.Jan14 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan15, (2 * d.Jan15 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan16, (2 * d.Jan16 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan17, (2 * d.Jan17 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan18, (2 * d.Jan18 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan19, (2 * d.Jan19 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan20, (2 * d.Jan20 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan21, (2 * d.Jan21 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan22, (2 * d.Jan22 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan23, (2 * d.Jan23 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan24, (2 * d.Jan24 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan25, (2 * d.Jan25 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan26, (2 * d.Jan26 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan27, (2 * d.Jan27 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan28, (2 * d.Jan28 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan29, (2 * d.Jan29 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan30, (2 * d.Jan30 - 8) / this.getComputedTextLength() * 24) + "px"; })
+		.transition().duration(5000)
+		.style("font-size", function(d) { return Math.min(2 * d.Jan31, (2 * d.Jan31 - 8) / this.getComputedTextLength() * 24) + "px"; })
+	  ;
+
+  //Where and how nodes are displayed
+  force.on("tick", function() {
+    node.attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+node
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+ 
+ 
+
+  });
+    
+var label = svg.append("text")
+    .attr("class", "year label")
+    .attr("text-anchor", "end")
+    .attr("y", height - 24)
+    .attr("x", width - 250)
+    //.text("week2")
+.transition().duration(5000).text("01-Jan")
+.transition().duration(5000).text("02-Jan")
+.transition().duration(5000).text("03-Jan")
+.transition().duration(5000).text("04-Jan")
+.transition().duration(5000).text("05-Jan")
+.transition().duration(5000).text("06-Jan")
+.transition().duration(5000).text("07-Jan")
+.transition().duration(5000).text("08-Jan")
+.transition().duration(5000).text("09-Jan")
+.transition().duration(5000).text("10-Jan")
+.transition().duration(5000).text("11-Jan")
+.transition().duration(5000).text("12-Jan")
+.transition().duration(5000).text("13-Jan")
+.transition().duration(5000).text("14-Jan")
+.transition().duration(5000).text("15-Jan")
+.transition().duration(5000).text("16-Jan")
+.transition().duration(5000).text("17-Jan")
+.transition().duration(5000).text("18-Jan")
+.transition().duration(5000).text("19-Jan")
+.transition().duration(5000).text("20-Jan")
+.transition().duration(5000).text("21-Jan")
+.transition().duration(5000).text("22-Jan")
+.transition().duration(5000).text("23-Jan")
+.transition().duration(5000).text("24-Jan")
+.transition().duration(5000).text("25-Jan")
+.transition().duration(5000).text("26-Jan")
+.transition().duration(5000).text("27-Jan")
+.transition().duration(5000).text("28-Jan")
+.transition().duration(5000).text("29-Jan")
+.transition().duration(5000).text("30-Jan")
+.transition().duration(5000).text("31-Jan")
+;
+
+	  // Add an overlay for the year label.
+  var box = label.node().getBBox();
+
+
+setInterval(function(){
+
+  //Restart the layout.
+force.start();
+
+
+}, 1000);
+	  
+	  
+  //Legend
+  var legend = svg.selectAll(".legend")
+      .data(color.domain())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+});
+
+</script>
